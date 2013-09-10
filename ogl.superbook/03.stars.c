@@ -6,53 +6,59 @@
 #define TRUE 1
 int bEdgeFlag = 0;
 
-void RenderScene (void) {
+void RenderScene (void)
+{
     glPolygonMode(GL_FRONT, GL_LINE);
     glClear(GL_COLOR_BUFFER_BIT);
     glBegin(GL_TRIANGLES); 
     {
-	// first
-	glEdgeFlag(bEdgeFlag);
-	glVertex2f(-20.0f, 0.0f);
-	glEdgeFlag(TRUE);	
-	glVertex2f(20.0f, 0.0f);
-	glVertex2f(0.0f, 40.0f);
-	//second
-	glVertex2f(-20.0f, 0.0f);
-	glVertex2f(-60.0f, -20.0f);	
-	glEdgeFlag(bEdgeFlag);
-	glVertex2f(-20.0f, -40.0f);
-	// third
-	glEdgeFlag(TRUE);
-	glVertex2f(-20.0f, -40.0f);
-	glVertex2f(0.0f, -80.0f);
-	glEdgeFlag(bEdgeFlag);
-	glVertex2f(20.0f, -40.0f);	
-	// fourth
-	glEdgeFlag(TRUE);
-	glVertex2f(20.0f, -40.0f);
-	glVertex2f(60.0f, -20.0f);
-	glEdgeFlag(bEdgeFlag);
-	glVertex2f(20.0f, 0.0f);	
-	glEdgeFlag(TRUE);
-	
-	// draw two triangles for central square	
-	// first
-	glEdgeFlag(bEdgeFlag);
-	glVertex2f(-20.0f, 0.0f);
-	glVertex2f(-20.0f, -40.0f);
-	glVertex2f(20.0f, 0.0f);	
-	// second
-	glVertex2f(-20.0f, -40.0f);
-	glVertex2f(20.0f, -40.0f);
-	glVertex2f(20.0f, 0.0f);
-	glEdgeFlag(TRUE);	
+        // first
+        glEdgeFlag(bEdgeFlag);
+        glVertex2f(-20.0f, 0.0f);
+        glEdgeFlag(TRUE);
+        glVertex2f(20.0f, 0.0f);
+        glVertex2f(0.0f, 40.0f);
+
+        //second
+        glVertex2f(-20.0f, 0.0f);
+        glVertex2f(-60.0f, -20.0f);
+        glEdgeFlag(bEdgeFlag);
+        glVertex2f(-20.0f, -40.0f);
+
+        // third
+        glEdgeFlag(TRUE);
+        glVertex2f(-20.0f, -40.0f);
+        glVertex2f(0.0f, -80.0f);
+        glEdgeFlag(bEdgeFlag);
+        glVertex2f(20.0f, -40.0f);
+
+        // fourth
+        glEdgeFlag(TRUE);
+        glVertex2f(20.0f, -40.0f);
+        glVertex2f(60.0f, -20.0f);
+        glEdgeFlag(bEdgeFlag);
+        glVertex2f(20.0f, 0.0f);
+        glEdgeFlag(TRUE);
+
+        // draw two triangles for central square
+        // first
+        glEdgeFlag(bEdgeFlag);
+        glVertex2f(-20.0f, 0.0f);
+        glVertex2f(-20.0f, -40.0f);
+        glVertex2f(20.0f, 0.0f);
+
+        // second
+        glVertex2f(-20.0f, -40.0f);
+        glVertex2f(20.0f, -40.0f);
+        glVertex2f(20.0f, 0.0f);
+        glEdgeFlag(TRUE);
     }
     glEnd();
     glutSwapBuffers();
 }
 
-void ChangeSize(GLsizei w, GLsizei h) {
+void ChangeSize(GLsizei w, GLsizei h)
+{
     GLfloat nRange = 100.0f;
     GLfloat aspectRatio;
     if (h == 0) 

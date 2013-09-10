@@ -5,12 +5,15 @@ void RenderScene (void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glShadeModel(GL_SMOOTH);
     glBegin(GL_TRIANGLES);
+
     // first red vertex
     glColor3ub((GLubyte)255, (GLubyte)0, (GLubyte)0);
     glVertex3f(0.0f, 200.0f, 0.0f);
+
     // second green vertex
     glColor3ub((GLubyte)0, (GLubyte)255, (GLubyte)0);
     glVertex3f(200.0f, -70.0f, 0.0f);
+
     // third blue vertex
     glColor3ub((GLubyte)0, (GLubyte)0, (GLubyte)250);
     glVertex3f(-200.0f, -70.0f, 0.0f);    

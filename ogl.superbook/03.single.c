@@ -5,7 +5,8 @@
 
 #define GL_PI 3.14
 
-void RenderScene (void) {
+void RenderScene (void)
+{
     static GLdouble dRadius = 1;
     static GLdouble dAngle = 0.0;
     if (dAngle == 0.1)
@@ -22,7 +23,8 @@ void RenderScene (void) {
     glutSwapBuffers();
 }
 
-void ChangeSize(GLsizei w, GLsizei h) {
+void ChangeSize(GLsizei w, GLsizei h)
+{
     GLfloat nRange = 100.0f;
     GLfloat aspectRatio;
     glClear(GL_COLOR_BUFFER_BIT);
@@ -41,16 +43,19 @@ void ChangeSize(GLsizei w, GLsizei h) {
     glLoadIdentity();	
 }
 
-void TimerFunction (int value) {
+void TimerFunction (int value)
+{
     glutTimerFunc (33, TimerFunction, 1);
     glutPostRedisplay();
 }
 
-void SetupRC() {
+void SetupRC()
+{
     glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
     glutInit(&argc, argv);        
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
     glutCreateWindow("single");

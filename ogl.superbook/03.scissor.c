@@ -1,7 +1,8 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 
-void RenderScene() {
+void RenderScene()
+{
     glClearColor(0.0f, 0.0f, 1.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -25,7 +26,8 @@ void RenderScene() {
     glutSwapBuffers();
 }
 
-void ChangeSize(GLsizei w, GLsizei h) {
+void ChangeSize(GLsizei w, GLsizei h)
+{
     GLfloat nRange = 100.0f;
     GLfloat aspectRatio;
     if (h == 0) 
@@ -43,7 +45,8 @@ void ChangeSize(GLsizei w, GLsizei h) {
     glLoadIdentity();	
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     glutInit(&argc, argv);        
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
     glutCreateWindow("Simple");

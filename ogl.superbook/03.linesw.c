@@ -20,8 +20,7 @@ void RenderScene (void)
     glClear(GL_COLOR_BUFFER_BIT);
     glPushMatrix();
 
-    for (y = -90.0f; y <= 90.f; y += 20.0f) 
-    {
+    for (y = -90.0f; y <= 90.f; y += 20.0f) {
         glLineWidth(curSize);
         glLineStipple(factor, pattern);
 
@@ -48,11 +47,9 @@ void ChangeSize(GLsizei w, GLsizei h)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     aspectRatio = (GLfloat) w / (GLfloat) h;
-    if (w <= h)
-    {
+    if (w <= h) {
         glOrtho (-nRange, nRange, -nRange / aspectRatio, nRange / aspectRatio, -nRange, nRange);
-    } else 
-    {
+    } else  {
         glOrtho (-nRange * aspectRatio, nRange * aspectRatio, -nRange, nRange, -nRange, nRange);
     }
     glMatrixMode(GL_MODELVIEW);
